@@ -20,19 +20,19 @@ int main(int argc, char *argv[]){
 
     // IP and port number in order
     if(argc != 2){
-        cerr << "Usage: [program] [port_Number] " << endl;
+        cerr << "Usage:[port_Number] " << endl;
         exit(0);
     }
 
     // get port number
-    int port = atoi(argv[2]); 
+    int port = atoi(argv[1]); 
 
     //create message buffer
     char msg[1500];
 
     //setup a socket and connection tools
-    sockaddr_in sendSockAddr;
-    bzero((char*) &sendSockAddr, sizeof(sendSockAddr));
+    sockaddr_in servAddr;
+    bzero((char*) &servAddr, sizeof(servAddr));
     servAddr.sin_family = AF_INET;
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     servAddr.sin_port = htons(port);
@@ -99,11 +99,11 @@ int main(int argc, char *argv[]){
         if(data == "exit" ){
             //send to the client that server has closed the connection
             send(newSd, (char*) &msg, strlen(msg), 0);
-            break
+            break;
         }
 
         //send message to client
-        bytesWritten += send(newSd, (char*) &msg, strelen(msg), 0);
+        bytesWritten += send(newSd, (char*) &msg, strlen(msg), 0);
 
     }
 

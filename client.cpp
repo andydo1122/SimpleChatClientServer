@@ -65,7 +65,7 @@ int main(int argc, char *argv[]){
             break;
         }
 
-        btesWritten += send(clientSd, (char*) &msg, strlen(msg), 0);
+        bytesWritten += send(clientSd, (char*) &msg, strlen(msg), 0);
         cout << "Awaiting server response..." << endl;
         // clear buffer again
         memset(&msg, 0, sizeof(msg));
