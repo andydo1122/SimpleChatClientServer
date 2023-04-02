@@ -112,7 +112,7 @@ int main(int argc, char *argv[]){
     close(newSd);
     close(serverSd);
     cout << "*****Session*****" << endl;
-    cout << "Bytes written: " << bytesWritten << "Bytes read: " << bytesRead << endl;
+    cout << "Bytes written: " << bytesWritten << " Bytes read: " << bytesRead << endl;
     cout << "Elapsed time: " << (end1.tv_sec - start1.tv_sec) << " secs" << endl;
     cout << "Connection closed.." << endl; 
 

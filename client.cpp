@@ -15,6 +15,7 @@
 #include <fcntl.h>
 #include <fstream>
 
+
 using namespace std;
 
 int main(int argc, char *argv[]){
@@ -50,6 +51,7 @@ int main(int argc, char *argv[]){
     }
 
     cout << "Connected to server." << endl;
+    cout << "Should you want to exit the chat type: exit" << endl;
     int bytesRead, bytesWritten = 0;
     struct timeval start1, end1;
     gettimeofday(&start1, NULL);
@@ -75,7 +77,6 @@ int main(int argc, char *argv[]){
             cout << "Server has quit the session" << endl;
             break;
         }
-
         cout << "Server: " << msg << endl;
     }
 
